@@ -8,7 +8,15 @@
 
     // TODO: Call a function to load all the data.
     // Pass a view function as a callback, so the view will render after the data is loaded.
-
+    Article.fetchAll = callback => {
+      $.get('/articles')
+      .then(
+        results => {
+          Article.loadAll(results);
+          callback();
+        }
+      )
+    };
   };
 
   module.aboutController = aboutController;
