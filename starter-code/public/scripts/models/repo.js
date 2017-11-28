@@ -14,12 +14,14 @@
 
     .then(
       results => {
-        repos.all(results);
+        repos.all = results;
+        console.log('Repos returned', results);
         callback();
-      }
+      },
+      error => console.log('error, danger will robinson');
     )
 
-    // TODO: How would you like to fetch your repos? Don't forget to call the callback.
+    // TODO (DONE): How would you like to fetch your repos? Don't forget to call the callback.
     //       Remember that the callback function we'll want to call relies on repos.all
     //       being an array with a bunch of repo objects in it, so you'll need to
     //       populate it with the response from Github before you call the callback.
