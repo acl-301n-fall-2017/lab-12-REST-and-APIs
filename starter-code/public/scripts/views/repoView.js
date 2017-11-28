@@ -11,7 +11,8 @@
     $about.show().siblings().hide();
   };
 
-  // TODO: Remember that new Handlebars template? Let's compile it!
+  var render = Handlebars.compile($("#repo-template").html());
+  // TODO(DONE): Remember that new Handlebars template? Let's compile it!
   // Save the result in this `render` variable.
 
   repoView.index = function() {
