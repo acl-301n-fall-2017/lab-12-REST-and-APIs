@@ -8,7 +8,7 @@
   repos.requestRepos = function(callback) {
         $.ajax({
           type: "GET",
-          url: "https://api.github.com/LangstonMac/repos",
+          url: "https://api.github.com/user/repos",
           Authorization: token,
         })
         .then(
