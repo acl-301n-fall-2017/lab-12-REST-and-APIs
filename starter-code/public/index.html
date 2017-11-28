@@ -33,7 +33,7 @@
           <h3>{{name}}</h3>
         </a>
         <p>Description: {{description}}</p>
-        <p>Language: {{languages_url}}</p>
+        <p>Language: {{language}}</p>
         <p>Created: {{created_at}}</p>
         <p>Last updated: {{updated_at}}</p>
         {{#if watchers_count}}
@@ -104,6 +104,7 @@
     <!-- Your secret GitHub token file should be added into your .gitignore file, therefore recreated on every developer's environment. -->
     <script src="/scripts/models/githubToken.js"></script>
     <script src="/scripts/models/repo.js"></script>
+    <script src="/scripts/views/repoView.js"></script>
 
     <!-- Script files for the Article resource: -->
     <script src="/scripts/models/article.js"></script>
@@ -111,7 +112,7 @@
     <script src="/scripts/controllers/articleController.js"></script>
 
     <!-- TODO:DONE Be sure to include any new script files: -->
-    <scripts src ="scripts/controllers/aboutController.js"><script>
+    <script src ="/scripts/controllers/aboutController.js"></script>
     <script src="/scripts/controllers/routes.js"></script>
   </body>
 </html>
