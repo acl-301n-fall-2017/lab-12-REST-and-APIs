@@ -6,11 +6,23 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
+    $.ajax
+    ({
+      method: "GET",
+      url: `https://api.github.com/user/repos?access_token=${token}`,
+    });
+
+    .then(
+      results => {
+        repos.all(results);
+        callback();
+      }
+    )
+
     // TODO: How would you like to fetch your repos? Don't forget to call the callback.
     //       Remember that the callback function we'll want to call relies on repos.all
     //       being an array with a bunch of repo objects in it, so you'll need to
     //       populate it with the response from Github before you call the callback.
-
   };
 
   // REVIEW: Model method that filters the full collection for repos with a particular attribute.
