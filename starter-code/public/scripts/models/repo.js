@@ -6,14 +6,12 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-        $.ajax({
-          type: "GET",
-          url: "https://api.github.com/user/repos",
-          Authorization: token,
-        })
+
+          $.ajax(`https://api.github.com/user/repos?access_token=${token}`)
+
         .then(
           results => {
-            repos.all(results)
+            repos.all = results;
             callback();
           }
         );
