@@ -10,7 +10,7 @@
     ({
       method: "GET",
       url: `https://api.github.com/user/repos?access_token=${token}`,
-    });
+    })
 
     .then(
       results => {
@@ -18,8 +18,8 @@
         console.log('Repos returned', results);
         callback();
       },
-      error => console.log('error, danger will robinson');
-    )
+      error => console.log('error, danger will robinson'));
+  
 
     // TODO (DONE): How would you like to fetch your repos? Don't forget to call the callback.
     //       Remember that the callback function we'll want to call relies on repos.all
