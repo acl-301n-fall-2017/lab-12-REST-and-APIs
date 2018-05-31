@@ -10,9 +10,14 @@
     $about.find('ul').empty();
     $about.show().siblings().hide();
   };
+    // TODONE: Remember that new Handlebars template? Let's compile it!
+    // Save the result in this `render` variable.
 
-  // TODO: Remember that new Handlebars template? Let's compile it!
-  // Save the result in this `render` variable.
+  const render = function(repo) {
+  var theTemplateScript = $("#repo-template").text();
+  var theTemplate = Handlebars.compile(theTemplateScript);
+  return theTemplate(repo);
+};
 
   repoView.index = function() {
     ui();

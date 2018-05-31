@@ -6,7 +6,7 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    // TODO: How would you like to fetch your repos? Don't forget to call the callback.
+    // TODONE: How would you like to fetch your repos? Don't forget to call the callback.
     //       Remember that the callback function we'll want to call relies on repos.all
     //       being an array with a bunch of repo objects in it, so you'll need to
     //       populate it with the response from Github before you call the callback.
@@ -16,8 +16,8 @@
       url:'https://api.github.com/users/Quintam26/repos',
       data: "data",
       success: function (data) {
-      // const info = data;
-      repos.all.push(data)  
+      repos.all = data;
+      callback() // render callback
       }
     });
   };
