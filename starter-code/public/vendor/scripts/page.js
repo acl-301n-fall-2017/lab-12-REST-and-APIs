@@ -700,11 +700,11 @@ process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
 
-process.binding = function (name) {
+process.binding = function (nam`e`) {
     throw new Error('process.binding is not supported');
 };
 
-// TODO(shtylman)
+// (shtylman)
 process.cwd = function () { return '/' };
 process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
