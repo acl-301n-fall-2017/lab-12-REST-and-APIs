@@ -13,11 +13,11 @@
 
     $.ajax({
       dataType: "json",
-      url:'https://api.github.com/users/Quintam26/repos',
+      url:'https://api.github.com/users/davidchhing/repos',
       data: "data",
       success: function (data) {
       repos.all = data;
-      callback() // render callback
+      callback(); // render callback
       }
     });
   };
