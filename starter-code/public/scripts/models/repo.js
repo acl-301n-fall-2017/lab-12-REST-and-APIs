@@ -8,8 +8,7 @@
   repos.requestRepos = function(callback) {
     const getRepos = $.getJSON('https:api.github.com/users/idomskt/repos').then(data => {
         const repositories = data.map(repo => repos.all.push(repo));
-      });
-
+      }).then(callback);
 
     // TODO: How would you like to fetch your repos? Don't forget to call the callback.
     //       Remember that the callback function we'll want to call relies on repos.all
