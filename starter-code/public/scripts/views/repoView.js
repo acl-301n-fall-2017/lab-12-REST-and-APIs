@@ -14,8 +14,9 @@
   // TODO: Remember that new Handlebars template? Let's compile it!
   // Save the result in this `render` variable.
   const render = Handlebars.compile($("#repo-template").text());
-
-  repoView.index = function() {
+ 
+  ////////////is this considered a callback function? QUESTION
+  repoView.index = function(repos) {
     ui();
     console.log('something');
 
@@ -23,7 +24,9 @@
     $('#about ul').append(
       repos.with('name').map(render) // Want to filter by a different property other than name?
     );
+    
   };
+  
 
   module.repoView = repoView;
 })(window);

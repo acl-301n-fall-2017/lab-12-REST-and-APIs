@@ -4,7 +4,7 @@
   const repos = {};
 
   repos.all = [];
-
+  //repos.reqestRepos(repoView.index); 
   repos.requestRepos = function(callback) {
     // TODO: How would you like to fetch your repos? Don't forget to call the callback.
     //       Remember that the callback function we'll want to call relies on repos.all
@@ -12,10 +12,13 @@
     //       populate it with the response from Github before you call the callback.
     $.getJSON('https://api.github.com/users/katedam/repos')
     .then(data =>{
-      data.map(data =>{ repos.all.push(data)});
+      // data.map(data =>{ repos.all.push(data)}); //we can also use this instead of repos.all
+      repos.all = data
+      callback();
 
     })
-    .then(callback);
+    // .then(callback);
+    ///////////this is essentially repos.requestRepos(repoView.index)? why do we need to call it here again when were calling it in aboutController.js? QUESTION
     
   }
 
@@ -25,3 +28,7 @@
 
   module.repos = repos;
 })(window);
+
+/////////////EXPLANATION
+////repos.requestRepos is saving a call back function which were going to run later, which will be the repoView.index function which displays the information to the browser. 
+
